@@ -1,2 +1,2 @@
 # stocks
-To find movements of NSE stocks
+To analyse technical indicators of stocks
