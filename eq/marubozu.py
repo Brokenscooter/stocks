@@ -8,14 +8,14 @@ def marubozu(opn, high, low, close):
         print("Open low diff percentage = ", open_low_difference)
         close_high_difference = abs(close - high) / close * 100
         print("Close high diff percentage = ", close_high_difference)
-        if open_low_difference < 0.0025 and close_high_difference < 0.25:  # Definition of marubozu
+        if open_low_difference < 0.25 and close_high_difference < 0.25:  # Definition of marubozu
             return 'Bull'
     elif close < opn:  # Bearish Marubozu Check
         open_high_difference = abs(opn - high) / opn * 100
         print("Open high diff percentage = ", open_high_difference)
         close_low_difference = abs(close - low) / close * 100
         print("Close low diff percentage = ", close_low_difference)
-        if open_high_difference < 0.0025 and close_low_difference < 0.25:  # Definition of marubozu
+        if open_high_difference < 0.25 and close_low_difference < 0.25:  # Definition of marubozu
             return 'Bear'
     else:
         return False
