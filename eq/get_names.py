@@ -3,7 +3,7 @@
 import csv
 
 
-def get_list(csv_path):
+def _list(csv_path="tickers.csv"):
     names_list = []
     with open(csv_path, 'r') as csv_file:
         csv_reader = csv.reader(csv_file)
@@ -12,6 +12,12 @@ def get_list(csv_path):
     return names_list
 
 
+def _string():
+    names_list = _list()
+    names_string = ""
+    return names_string + ' '.join(names_list)
+
+
 if __name__ == "__main__":
-    print(get_list("nifty50.csv"))  # Testing the stock_list() function
+    print(_string())  # Testing the _string() function
 

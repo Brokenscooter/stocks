@@ -9,15 +9,17 @@ import yfinance as yf
 # fetch data by interval (including intraday if period < 60 days)
 
 
-def fetch_with_period(ticker, interval, period):  # Takes period as the input
+def _period(ticker, interval, period):  # Takes period as the input
     data = yf.download(tickers=ticker, interval=interval, period=period)
     return data
 
 
-def fetch_with_dates(ticker, interval, start_date, end_date):  # Takes dates range as the input
+def _dates(ticker, interval, start_date, end_date):  # Takes dates range as the input
     data = yf.download(tickers=ticker, interval=interval, start=start_date, end=end_date)
     return data
 
 
 if __name__ == '__main__':
-    print(fetch_with_period('AXISBANK.NS', '1d', 'ytd'))  # Testing on AXISBANK(NSE)
+    print(_period('AXISBANK.NS', '1d', '1d'))  # Testing on AXISBANK(NSE)
+
+
